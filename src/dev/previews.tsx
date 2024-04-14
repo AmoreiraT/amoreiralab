@@ -5,8 +5,11 @@ import { PaletteTree } from './palette';
 export function ComponentPreviews() {
   return (
     <Previews palette={<PaletteTree />}>
-      <ComponentPreview path="/HomePage">
+      <ComponentPreview path="/home">
         <HomePage />
+      </ComponentPreview>
+      <ComponentPreview path="/ComponentPreviews">
+        <ComponentPreviews />
       </ComponentPreview>
     </Previews>
   );

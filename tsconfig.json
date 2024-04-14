@@ -49,17 +49,12 @@
       ],
       "@hooks/*": [
         "./src/hooks/*"
-      ],
-      "@stories/*": [
-        "./stories/*"
       ]
     }
   },
   "include": [
     "src",
-    "declarations.d.ts",
     ".eslintrc.cjs",
-    "stories",
     "tests"
   ],
   "references": [

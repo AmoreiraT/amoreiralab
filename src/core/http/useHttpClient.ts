@@ -4,7 +4,7 @@ import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import { getLocalStorage } from '@shared/utils/localStorage';
 import { useNavigate } from 'react-router-dom';
 import { ApiError, StatusError, UnknownError } from '@core/error';
-import { env } from '@core/Enviroment';
+import { ENV } from '@core/Enviroment';
 import { ApiResponse, ApiSuccessResponse, HttpRequest } from './protocols';
 
 export const UseHttpClient: () => {
@@ -21,7 +21,7 @@ export const UseHttpClient: () => {
 } = () => {
   const navigate = useNavigate();
 
-  const apiUrl = env.VITE_API_BASE_URL;
+  const apiUrl = ENV.VITE_API_BASE_URL;
   const sendApiRequest = async <T extends object>(requestData: HttpRequest) => {
     return axios
       .request<ApiResponse<T>>({
