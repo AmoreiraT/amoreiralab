@@ -8,7 +8,7 @@ export const GlobalStyle = styled.createGlobalStyle`
       font-family: 'Roboto';
       font-style: normal;
       font-weight: 400;
-      color: ${theme.color.text.primary};
+      color: ${theme.color.palettes.neutral['100']};
       font-display: swap;
       src: local('Roboto Regular'), local('Roboto-Regular');
     }

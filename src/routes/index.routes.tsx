@@ -1,7 +1,6 @@
 // router
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HomePage } from '@features/HomePage';
-import { PrivateRoute } from './PrivateRoute';
 import { VerifyNotFound } from './VerifyNotFound';
 
 const createRoutes = () => {
@@ -14,11 +13,11 @@ const createRoutes = () => {
       children: [
         {
           index: true,
-          element: <>HomePage</>,
+          element: <HomePage />,
         },
         {
           path: '/home',
-          element: <>HomePage</>,
+          element: <HomePage />,
         },
         {
           path: '/not-authorized',
@@ -34,8 +33,8 @@ const createRoutes = () => {
         },
 
         {
-          path: '',
-          element: <PrivateRoute component={<>Err</>} />,
+          path: '/',
+          element: <HomePage />,
         },
       ],
     },

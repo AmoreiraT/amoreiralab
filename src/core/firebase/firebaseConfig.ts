@@ -2,6 +2,8 @@
 import { FirebaseOptions, initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { ENV } from '@core/Enviroment';
+import { getFirestore } from 'firebase/firestore';
+import { FirebaseStorage, getStorage } from 'firebase/storage';
 
 export const firebaseConfig: FirebaseOptions = {
   apiKey: ENV.VITE_FB_API_KEY,
@@ -12,9 +14,12 @@ export const firebaseConfig: FirebaseOptions = {
   appId: ENV.VITE_FB_APPID,
   measurementId: ENV.VITE_FB_MID,
 };
+const app = initializeApp(firebaseConfig);
+
+export const db = getFirestore(app);
+export const storage: FirebaseStorage = getStorage(app);
 
 export function getFirebaseApp() {
-  const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   console.log(analytics);
   return app;
